@@ -1,0 +1,171 @@
+.cabecera {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(48, 13, 13, 1) 21%, rgba(61, 8, 8, 1) 53%, rgba(196, 6, 6, 1) 100%);
+}
+
+#titulo {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+}
+
+.badge {
+    font-size: 20px;
+}
+
+.fa-facebook:hover {
+    color: #3B5998;
+}
+
+.fa-twitter-square:hover {
+    color: #1dcaff;
+}
+
+.fa-instagram:hover {
+    color: #e95950;
+}
+
+hr {
+    border-color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.barraMenu {
+    border-color: red
+}
+
+h2 {
+    color: rgb(153, 0, 0)
+}
+
+#asideIzquierdo {
+    padding: 0px !important;
+}
+
+.enlacesMenu {
+    font-size: 18px;
+    text-transform: uppercase
+}
+
+#menus {
+    display: block;
+    padding: 0px !important;
+}
+
+.opiniones {
+    height: 150px;
+}
+
+.usuario {
+    font-style: italic;
+    color: blue;
+    text-decoration: underline;
+}
+
+.estrellas {
+    color: rgb(223, 223, 52)
+}
+
+.opinionUsuario {
+    font-style: italic;
+}
+
+a {
+    color: black;
+}
+
+.btn-cesta {
+    visibility: hidden;
+}
+
+#contenido {
+    padding: 0px !important;
+}
+
+.imagenProducto {
+    width: 80%;
+    height: 200px;
+}
+
+.producto {
+    border: 1px solid transparent;
+    padding: 10px;
+}
+
+.producto:hover {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 6px #888888;
+}
+
+.producto:hover>button {
+    visibility: visible;
+    margin: auto;
+}
+
+.nombreProducto {
+    height: 60px;
+}
+
+.precio {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: oblique;
+    color: #a30b00;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.ultimaCompra {
+    height: 30%;
+}
+
+.ofertaLimitada {
+    width: 80%;
+    height: 170px;
+}
+
+.parpadea {
+    animation-name: parpadeo;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: parpadeo;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@keyframes parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
