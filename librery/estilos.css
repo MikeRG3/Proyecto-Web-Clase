@@ -29,6 +29,12 @@ hr {
     margin-right: 10%;
 }
 
+.hr-red {
+    border-color: grey;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 .barraMenu {
     border-color: red
 }
@@ -163,4 +169,13 @@ a {
     100% {
         opacity: 1.0;
     }
+}
+
+.logoGrande {
+    font-size: 100px;
+    padding: 15px;
+}
+
+.mayus {
+    text-transform: uppercase;
 }
