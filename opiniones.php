@@ -1,43 +1,83 @@
+
+
 <div id="opinion" class="carousel slide d-none d-sm-block bg-light mt-4" data-ride="carousel">
 
     <h2 class=" p-4 ">Opiniones</h2>
     <hr class="barraMenu">
+
     <div class="carousel-inner text-center">
-        <div class="carousel-item active">
-            <img src="img/patin.jpg " alt=" " class="ultimaCompra col-6 ">
-            <div class="text-center ">
-                <div class="opiniones">
+    <?php 
+        $consulta = "Select * from opiniones";
+        $res = $mysqli->query($consulta);
+        $i=0;
+        while($rows=$res->fetch_assoc()){
+            $i++;
+            $id_usuario = $rows['id_usuario'];
+            $comentario = $rows['comentarios'];
+            $titulo = $rows['titulo'];
+            $estrellas = $rows['estrellas'];
+            
+            $consulta = "Select nombre, apellidos from clientes where id_usuario like '$id_usuario'";
+            $res2 = $mysqli->query($consulta);
+            $rows2 = $res2->fetch_assoc();
+            $nombreUsuario = $rows2['nombre'];
+            $apellidosUsuario =$rows2['apellidos'];
 
-                    <p class="usuario">Ramón R.</p>
-                    <p class="opinionUsuario">Un patín excepcional. Mucha calidad a un precio muy ajustado</p>
-                </div>
-                <p class="estrellas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                <br><br>
-            </div>
-        </div>
-        <div class="carousel-item ">
-            <img src="img/rueda.jpeg " alt=" " class="ultimaCompra col-6 ">
-            <div class="text-center ">
-                <div class="opiniones">
+            $ref_producto = $rows['ref_producto'];
+            $consulta = "Select * from productos where ref_producto like '$ref_producto'";
+            $res3=$mysqli->query($consulta);
+            $rows3=$res3->fetch_assoc();
+            $imagen =$rows3['imagen'];
+            if($i==1){
+                $class = "active";
+            }
+            else{
+                $class ="";
+            }
+            echo'
+            <div class="carousel-item '.$class.' ">
+            <img src="'.$imagen.'" alt=" " class="ultimaCompra col-6 ">
+                <div class="text-center ">
+                    <div class="opiniones">
 
-                    <p class="usuario">Álvaro Pérez</p>
-                    <p class="opinionUsuario">Ruedas a buen precio, pero se desgastan enseguida</p>
+                        <p class="usuario">'.$nombreUsuario.' '.$apellidosUsuario.'</p>
+                        <p class="opinionUsuario">'.$titulo.'</p>
+                        <a class="col-12 float-right" data-toggle="collapse" href="#vermas" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <small>Ver comentario</small>
+                         </a>
+                         <p class="collapse " id="vermas">
+                                '.$comentario.'
+                         </p>
+                    </div>
+                    <p class="estrellas mt-2">';
+                    $j=0;
+                    while($j <5){
+                        if($estrellas>=$j){
+                            if($estrellas - $j == 0.5){
+                               echo '<i class="fas fa-star-half-alt"></i>';
+                            }
+                            else{
+                                echo '<i class="fas fa-star"></i>';
+                            }
+                        }
+                        else {
+                            echo '<i class="far fa-star"></i>';
+                        }
+                        $j++;
+                    }
+                   
+                    echo '</p>
+                    <br><br>
                 </div>
-                <p class="estrellas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-                <br><br>
-            </div>
-        </div>
-        <div class="carousel-item ">
-            <img src="img/patin2.png " alt=" " class="ultimaCompra col-6 ">
-            <div class="text-center">
-                <div class="opiniones">
-                    <p class="usuario">Marina</p>
-                    <p class="opinionUsuario">Me encantan estos patines, aunque las ruedas sean un poco duras para mí</p>
-                </div>
-                <p class="estrellas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></p>
-                <br><br>
-            </div>
-        </div>
+             </div>
+            
+            ';
+
+        }
+
+     ?>
+        
+        
 
     </div>
     <a class="carousel-control-prev" href="#opinion" role="button" data-slide="prev">
@@ -50,3 +90,4 @@
     </a>
 
  </div>
+

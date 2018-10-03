@@ -57,9 +57,7 @@ h2 {
     padding: 0px !important;
 }
 
-.opiniones {
-    height: 150px;
-}
+.opiniones {}
 
 .usuario {
     font-style: italic;
@@ -68,7 +66,8 @@ h2 {
 }
 
 .estrellas {
-    color: rgb(223, 223, 52)
+    color: rgb(223, 223, 52);
+    font-size: 25px;
 }
 
 .opinionUsuario {

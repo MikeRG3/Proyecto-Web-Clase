@@ -42,9 +42,9 @@ session_start();
                     
                     if(isset($_GET["salir"])){
                         
-                           session_destroy();
+                        session_destroy();
                            
-                            include("salir.php");
+                         include("salir.php");
                     }
                     else if(isset($_GET["registro"])){
                         include("registro.php");
