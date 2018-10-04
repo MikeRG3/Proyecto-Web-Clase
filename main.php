@@ -7,8 +7,9 @@
                 echo '
              <div class="col-12 col-sm-4 col-md-3  m-3 producto text-center ">
                 <a href="#" target="_blank" class=" text-dark">
+                 
                     <img src="img/novedad.png" alt="Novedad" style="position:absolute" width="30%">
-                    <img class="imagenProducto img-fluid" src="'.$rows['imagen'].'" alt="">
+                    <img class="imagenProducto img-fluid" src="'.$GLOBALS['ruta'].$rows['imagen'].'" alt="">
                     <div class="nombreProducto">
                         <p>'.$rows['nombre'].'</p>
                     </div>

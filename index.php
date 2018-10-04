@@ -1,6 +1,7 @@
 
 <?php include("CONEXION.PHP");
 session_start();
+$GLOBALS['ruta'] = 'img/'; 
 ?>
 <!-- Header -->
 <?php include("header.php")?>
@@ -45,6 +46,12 @@ session_start();
                         session_destroy();
                            
                          include("salir.php");
+                    }
+                    else if(isset($_GET["categoria"])){
+                            include("carrusel.php");
+                            include("productoCategoria.php");
+                            
+                        
                     }
                     else if(isset($_GET["registro"])){
                         include("registro.php");

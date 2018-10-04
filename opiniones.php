@@ -36,7 +36,7 @@
             }
             echo'
             <div class="carousel-item '.$class.' ">
-            <img src="'.$imagen.'" alt=" " class="ultimaCompra col-6 ">
+            <img src="'.$GLOBALS['ruta'].$imagen.'" alt=" " class="ultimaCompra col-6 ">
                 <div class="text-center ">
                     <div class="opiniones">
 

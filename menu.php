@@ -22,11 +22,11 @@
                                 <a class="nav-link active enlacesMenu" data-toggle="collapse" href="#'.$rows['descripcion'].'"> <i class="far fa-plus-square"></i> '.$rows['descripcion'].'</a>
                                 <ul class="collapse  flex-column" id="'.$rows['descripcion'].'">';
                     
-                        $consulta = "Select descripcion from categorias where id_padre in(Select id_categoria from categorias where descripcion like '".$rows['descripcion']."') order by descripcion";
+                        $consulta = "Select descripcion,id_categoria from categorias where id_padre in(Select id_categoria from categorias where descripcion like '".$rows['descripcion']."') order by descripcion";
                         $res2 = $mysqli->query($consulta);
                         while($rows2=$res2->fetch_assoc()){
                             echo '
-                            <li><a href="index.php?'.$rows2['descripcion'].'=true">'.$rows2['descripcion'].'</a></li>
+                            <li><a href="index.php?categoria='.$rows2['id_categoria'].'&descripcion='.$rows2['descripcion'].'">'.$rows2['descripcion'].'</a></li>
                                 
                             ';
                         }
