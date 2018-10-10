@@ -63,6 +63,12 @@ $GLOBALS['ruta'] = 'img/';
                     else if(isset($_GET["cuenta"])){
                         include("miCuenta.php");
                     }
+                    else if(isset($_GET['producto'])){
+                        include("producto.php");
+                    }
+                    else if(isset($_GET['altaProducto'])){
+                        include("altaProducto.php");
+                    }
                     else{
 
                             include("carrusel.php");

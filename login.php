@@ -26,12 +26,13 @@
             $usuario=$_POST['usuario'];
             $contraseña=$_POST['contraseña'];
 
-            $consulta = "Select nombre,id_usuario from clientes where email like '$usuario' and password like '$contraseña'";
+            $consulta = "Select nombre,id_usuario,admin from clientes where email like '$usuario' and password like '$contraseña'";
             $res =$mysqli->query($consulta);
             $cont=$mysqli->affected_rows;
             $rows = $res->fetch_assoc();
             $nombre = $rows['nombre'];
             $id_usuario = $rows['id_usuario'];
+            $admin = $rows['admin'];
 
             if($cont<=0){
                 ?>
@@ -45,18 +46,23 @@
                 <?php
         
             } else{
-
                 $_SESSION['nombre']=$nombre;
                 $_SESSION['id_usuario']=$id_usuario;
+                $_SESSION['admin']=$admin;
+               
                 echo '
                 <div class="alert alert-light text-center" role="alert">
-                    BIENVENIDO '.$_SESSION['nombre'].'!!!
-                    <p>
+                    BIENVENIDO '.$_SESSION['nombre'].'!!!';
+                    if($admin == 1){
+                        echo ' <a class="btn btn-danger mt-4" href="index.php?altaProducto=true" role="button">Alta de producto</a>';
+                    }
+                    echo' <p>
                     <a class="btn btn-primary mt-4" href="index.php?cuenta=true" role="button">Mi cuenta</a>
 
                     <a class="btn btn-primary mt-4" href="index.php?salir=true" role="button">Salir</a>
                     </p>
                 </div>';
+               
             }
         }
         
@@ -65,7 +71,11 @@
             echo '
             <div class="alert alert-light text-center" role="alert">
                 BIENVENIDO '.$_SESSION['nombre'].'!!!
-                <p>
+                <p>';
+                if($_SESSION['admin'] == 1){
+                    echo ' <a class="btn btn-danger mt-4" href="index.php?altaProducto=true" role="button">Alta de producto</a>';
+                }
+                echo'
                 <a class="btn btn-primary mt-4" href="index.php?cuenta=true" role="button">Mi cuenta</a>
 
                 <a class="btn btn-primary mt-4" href="index.php?salir=true" role="button">Salir</a>

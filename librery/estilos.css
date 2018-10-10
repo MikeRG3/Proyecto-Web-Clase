@@ -178,3 +178,27 @@ a {
 .mayus {
     text-transform: uppercase;
 }
+
+.modalImg {
+    max-height: 300px;
+}
+
+.modalPrecio {
+    font-size: 30px;
+    font-weight: bold;
+    font-style: oblique;
+    color: #a30b00;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.modalDescrip {
+    height: 180px;
+}
+
+.precioProducto {
+    font-size: 50px;
+    font-weight: bold;
+    font-style: oblique;
+    color: #a30b00;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

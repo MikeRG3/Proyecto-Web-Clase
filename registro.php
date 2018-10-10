@@ -49,7 +49,7 @@ if(!isset($_POST["nombre"])){
             <button type="submit" class="btn btn-info mt-5 ">Enviar</button>
         </div>
     </div>
-
+</form>
 <?php 
 }
 else{
