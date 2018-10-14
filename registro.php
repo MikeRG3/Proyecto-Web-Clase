@@ -39,6 +39,26 @@ if(!isset($_POST["nombre"])){
             <input id="my-input " class="form-control " type="text " name="piso" required>
             <label for="my-input ">Puerta</label>
             <input id="my-input " class="form-control " type="text " name="puerta" required>
+            <label for="my-input ">Provincia</label>
+            <select class="custom-select" id="provincia" name="descuento" >
+            <option  value="0">--Seleccione su provincia-- </option>
+            
+            <?php 
+                $consulta = "Select * from provincias";
+                $res = $mysqli->query($consulta);
+                while($rows=$res->fetch_assoc()){
+                  
+                echo '  <option  value="'.$rows['id'].'">'.$rows['provincia'].' </option> ';
+                }
+
+            ?>                                               
+            </select>
+            <label for="my-input ">Localidad</label>
+            <select class="custom-select" id="localidad" name="localidad" >
+                <option  value="0">--Seleccione su municipio-- </option>
+            </select>
+
+
             <label for="my-input ">Código Postal</label>
             <input id="my-input " class="form-control " type="number " name="codigo" >
             <label for="my-input ">Comentarios</label>
